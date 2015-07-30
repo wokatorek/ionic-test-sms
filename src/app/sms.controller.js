@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('SMSController', function($cordovaSms, $ionicPopup, $scope) {
+angular.module('app').controller('SMSController', function($cordovaSms, $ionicPlatform, $ionicPopup, $scope) {
   var vm = $scope.vm = this;
 
   vm.recipient = '';
@@ -15,22 +15,24 @@ angular.module('app').controller('SMSController', function($cordovaSms, $ionicPo
       }
     };
 
-    $cordovaSms
-      .send(vm.recipient, vm.content, options)
-      .then(function() {
-        $ionicPopup.alert({
-          title: "Sukces",
-          template: "SMS został wysłany"
-        }).then(function() {
-          vm.recipient = null;
-          vm.content = null;
+    $ionicPlatform.ready(function() {
+      $cordovaSms
+        .send(vm.recipient, vm.content, options)
+        .then(function() {
+          $ionicPopup.alert({
+            title: "Sukces",
+            template: "SMS został wysłany"
+          }).then(function() {
+            vm.recipient = null;
+            vm.content = null;
+          });
+        })
+        .catch(function(error) {
+          $ionicPopup.alert({
+            title: "Błąd",
+            template: "Nie udało się wysłać SMS.<br/>" + error
+          });
         });
-      })
-      .catch(function(error) {
-        $ionicPopup.alert({
-          title: "Błąd",
-          template: "Nie udało się wysłać SMS.<br/>" + error
-        });
-      });
+    });
   };
 });
