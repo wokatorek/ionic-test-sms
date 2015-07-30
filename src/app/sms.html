@@ -9,7 +9,7 @@
           </label>
           <label class="item item-input item-stacked-label">
             <span class="input-label">Treść</span>
-            <textarea rows="8" placeholder="Wprowadź treść SMS-a"></textarea>
+            <textarea rows="8" ng-model="vm.content" ng-model-options="{updateOn:'blur'}" placeholder="Wprowadź treść SMS-a"></textarea>
           </label>
         </div>
         <div class="list list-inset">
