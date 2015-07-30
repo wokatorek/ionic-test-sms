@@ -5,7 +5,11 @@
         <div class="list">
           <label class="item item-input item-stacked-label">
             <span class="input-label">Adresat</span>
-            <input type="text" ng-model="vm.recipient" ng-model-options="{updateOn:'blur'}" placeholder="Wprowadź numer odbiorcy">
+            <input type="tel" ng-model="vm.recipient" ng-model-options="{updateOn:'blur'}" placeholder="Wprowadź numer odbiorcy">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Treść</span>
+            <textarea rows="8" placeholder="Wprowadź treść SMS-a"></textarea>
           </label>
         </div>
         <div class="list list-inset">

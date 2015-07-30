@@ -11,7 +11,8 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     // setup an abstract state for the tabs directive
     .state('sms', {
       url: '/sms',
-      templateUrl: 'app/sms.html'
+      templateUrl: 'app/sms.html',
+      controller: 'SMSController'
     });
 
   // if none of the above states are matched, use this as the fallback

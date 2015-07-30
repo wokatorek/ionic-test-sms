@@ -1,5 +1,6 @@
 'use strict';
 
 angular.module('app', [
-  'ionic'
+  'ionic',
+  'ngCordova'
 ]);
