@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').config(function($stateProvider, $urlRouterProvider) {
+angular.module('app').config(function($stateProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -14,8 +14,4 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'app/sms.html',
       controller: 'SMSController'
     });
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/sms');
-
 });

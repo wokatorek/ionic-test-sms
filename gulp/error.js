@@ -1,9 +1,11 @@
 'use strict';
 
+/* jshint strict:true, node:true */
+
 var $ = require('gulp-load-plugins')();
 
 module.exports = {
-  dev: function(error) { // jshint ignore:line
+  dev: function(error) { // jshint strict:true, unused:vars
     var args = Array.prototype.slice.call(arguments);
 
     // Send error to notification center with gulp-notify

@@ -1,16 +1,40 @@
 {
-  "name": "HelloIonic",
+  "name": "ionic-hello-world",
+  "version": "0.0.1",
   "private": "true",
   "dependencies": {
-    "angular-animate": "~1.4.3",
-    "angular-sanitize": "~1.4.3",
+    "angular-animate": "~1.4.8",
+    "angular-sanitize": "~1.4.8",
     "angular-ui-router": "~0.2.15",
-    "angular": "~1.4.3",
-    "ionic": "~1.0.1",
+    "angular": "~1.4.8",
+    "ionic": "~1.2.4",
     "ionicons": "~2.0.1",
-    "ngCordova": "~0.1.17-alpha"
+    "ngCordova": "~0.1.23-alpha"
   },
   "devDependencies": {
-    "angular-mocks": "~1.4.3"
+    "angular-mocks": "~1.4.8"
+  },
+  "overrides": {
+    "ionic": {
+      "main": [
+        "release/fonts/*",
+        "release/js/ionic.js",
+        "release/js/ionic-angular.js",
+        "scss/ionic.scss"
+      ]
+    },
+    "ionicons": {
+      "main": [
+        "scss/ionicons.scss",
+        "fonts/*"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular-animate": "~1.4.8",
+    "angular-sanitize": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "angular": "~1.4.8",
+    "ionic": "~1.2.4"
   }
 }

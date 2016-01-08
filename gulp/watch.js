@@ -1,5 +1,7 @@
 'use strict';
 
+/* jshint strict:true, node:true */
+
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
@@ -10,18 +12,19 @@ var paths = [
   'gulp/*.js'
 ];
 
-gulp.task('watch:gulp', "Watch for changes in gulp scripts", function(done) { // jshint ignore:line
+gulp.task('watch:gulp', "Watch for changes in gulp scripts", function(done) { // jshint strict:true, unused:vars
   $.watch(paths, function() {
     console.log("gulp files was changed: exiting...");
     process.exit();
   });
 });
 
-gulp.task('watch', "Watch for all changes", function(done) { // jshint ignore:line
+gulp.task('watch', "Watch for all changes", function(done) { // jshint strict:true, unused:vars
   runSequence([
     'watch:gulp',
     'watch:sass',
-    'watch:inject',
+    'watch:constants',
+    'watch:html',
     'watch:lint',
     'watch:spec'
   ]);

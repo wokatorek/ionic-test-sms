@@ -11,9 +11,10 @@ describe('SMSController', function() {
     vm = $controller('SMSController', {$scope: $scope});
   }));
 
-  describe('$scope.vm', function() {
-    it("is the same as controller's this", function() {
-      expect($scope.vm).to.equal(vm);
+  describe('vm', function() {
+    it("initial variables are correct", function() {
+      expect(vm.recipient).to.equal('');
+      expect(vm.content).to.equal('');
     });
   });
 

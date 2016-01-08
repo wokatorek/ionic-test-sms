@@ -1,0 +1,13 @@
+'use strict';
+
+var local = {
+
+  constants: {
+    dev: {
+      DEFAULT_STATE: 'tab.account'
+    }
+  }
+
+};
+
+module.exports = local;
