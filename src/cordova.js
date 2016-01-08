@@ -2,14 +2,14 @@
 
 // mocked cordova.js for tests in browser
 
-/* exported sms */
-var sms = {
-  send: function(number, message, options, success, fail) {
-    if (message && message.indexOf('error') === -1) {
-      success('Mocked success');
+/* exported SMS */
+var SMS = {
+  sendSMS: function(address, text, successCallback, failureCallback) {
+    if (text && text.indexOf('error') === -1) {
+      successCallback('Mocked success');
     } else {
-      // fail if message contains "error" string
-      fail('Mocked error');
+      // fail if text contains "error" string
+      failureCallback('Mocked error');
     }
   }
 };

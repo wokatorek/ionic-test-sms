@@ -1,25 +1,20 @@
 'use strict';
 
 angular.module('app').controller('SMSController', function(
-    $cordovaSms,
     $ionicPlatform,
     $ionicPopup,
-    $scope
+    $scope,
+    cordovaSms
 ) {
   var vm = $scope.vm = this;
   vm.recipient = '';
   vm.content = '';
 
   vm.submit = function() {
+
     $ionicPlatform.ready(function() {
-      $cordovaSms
-        .send(vm.recipient, vm.content, {
-          replaceLineBreaks: true, // true to replace \n by a new line, false by default
-          android: {
-            //intent: 'INTENT'  // send SMS with the native android SMS messaging
-            intent: '' // send SMS without open any other app
-          }
-        })
+      cordovaSms
+        .send(vm.recipient, vm.content)
         .then(function() {
           $ionicPopup.alert({
             title: "Success",
