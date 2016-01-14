@@ -12,6 +12,15 @@ angular.module('app').factory('cordovaSms', function ($q) {
         q.reject(err);
       });
       return q.promise;
+    },
+    read: function (filters){
+      var q = $q.defer();
+      SMS.listSMS(filters, function (res) {
+        q.resolve(res);
+      }, function (err) {
+        q.reject(err);
+      });
+      return q.promise;
     }
   };
 });

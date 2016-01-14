@@ -1,0 +1,28 @@
+<ion-view view-title="send">
+  <form name="form" valid-submit="vm.submit()" novalidate>
+    <ion-content class="has-footer">
+      <ion-list>
+      <div class="list">
+        <div class="item item-input item-stacked-label">
+          <span class="input-label">Recipient</span>
+          <input type="tel"
+                 ng-model="vm.recipient"
+                 ng-model-options="{updateOn:'blur'}"
+                 placeholder="+123456789"
+                 required>
+        </div>
+        <div class="item item-input item-stacked-label">
+          <span class="input-label">Content</span>
+          <textarea rows="8"
+                    ng-model="vm.content"
+                    ng-model-options="{updateOn:'blur'}"
+                    placeholder=""></textarea>
+        </div>
+      </div>
+      </ion-list>
+    </ion-content>
+    <div class="bar bar-footer bar-clear" ng-hide="keyboardOpen">
+      <button type="submit" class="button button-block button-positive">Send</button>
+    </div>
+  </form>
+</ion-view>

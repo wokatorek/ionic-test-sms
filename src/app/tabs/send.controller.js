@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('SMSController', function(
+angular.module('app').controller('SendController', function(
     $ionicPlatform,
     $ionicPopup,
     $scope,

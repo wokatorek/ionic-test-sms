@@ -18,7 +18,7 @@ var proxy = {
 };
 
 var constants = {
-  DEFAULT_STATE: 'sms',
+  DEFAULT_STATE: 'sms.send',
   VERSION: require('./version')
 };
 
